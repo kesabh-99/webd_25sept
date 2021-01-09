@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>Carousel </title>
+        <style>
+            .slider{
+                width : 80%;
+                height : 400px ; 
+                border : black 5px solid ; 
+                background-image: url(image1.jpg);
+                background-size : 100% 100% ; 
+                transition : all 0.3s ; 
+            }
+        </style>
+    </head>
+    <body>
+
+        <div  class="slider"   id="slider">
+            <div  id="dots">
+                <input type="radio"     id="btn0"   name="dots">
+                <input type="radio"     id="btn1"   name="dots">
+                <input type="radio"     id="btn2"   name="dots">
+                <input type="radio"     id="btn3"   name="dots">
+            </div>
+        </div>
+
+        <script>
+            //              0               1               2               3              
+            var images = ["image1.jpg" , "image2.jpg", "image3.jpg", "image4.jpg"] ;   
+            var i = 0 ; 
+           
+            setInterval(slide, 3000) ;   
+
+            function slide()
+            {
+                i++ ; 
+                if(i >= images.length) {   i = 0 ; }
+                document.getElementById("slider").style.backgroundImage = "url(" + images[i] + ")" ; 
+                document.getElementById("btn" + i).checked = "checked" ; 
+            }
+
+
+        </script>
+    </body>
+</html>
